@@ -6,7 +6,8 @@ const cors = require('cors');
 const { Console } = require('console');
 const connectDB = require('./config/db');
 const morgan = require('morgan')
-
+//@ load mongoDB
+connectDB();
 //@ load dotenv
 dotenv.config({path:'./config/config.env'});
 // initialize express
@@ -19,6 +20,8 @@ app.use(express.json());
 app.use(cors());
 // @ set logger 
 app.use(morgan('dev'));
+//@ routes
+app.use('/api/v1/stores',require('./routes/stores'));
 
 
 app.listen(PORT,console.log(`server is running in ${process.env.NODE_ENV} on port:${process.env.PORT}`.yellow));
