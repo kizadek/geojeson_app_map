@@ -29,12 +29,13 @@ exports.addStore= async (req,res,next)=>{
         
     } catch (error) {
 
-        if(error.code == 11000){
+        if(error.code === 11000){
            return res.status(400).json({
                sucsses: false,
                 msg: 'storeId alredy in use '
             })
         }
+        console.log(error);
         res.status(500).json({sucsses:false});
     }
 }
