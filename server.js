@@ -15,6 +15,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 //@ body parser
 app.use(express.json());
+//@ static files
+app.use(express.static(path.join(__dirname,'public')));
 //@ Enable cors
 app.use(cors());
 // @ set logger 
