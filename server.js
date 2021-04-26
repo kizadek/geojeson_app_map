@@ -5,7 +5,7 @@ const colors = require('colors');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const morgan = require('morgan')
-//@ load mongoDB
+//@ load mongoDB  
 connectDB();
 //@ load dotenv
 dotenv.config({path:'./config/config.env'});
